@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #050505;
+    color: #FFFFFF;
+  }
+  
+  .font-display {
+    font-family: 'Chakra Petch', 'Bebas Neue', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .font-comic {
+    font-family: 'Bebas Neue', 'Chakra Petch', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #123A73;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E21B2D;
+}
+
+/* Comic Panel Cut Corners */
+.comic-cut-corner {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 16px) 0,
+    100% 16px,
+    100% 100%,
+    16px 100%,
+    0 calc(100% - 16px)
+  );
+}
+
+.comic-cut-corner-sm {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+}
+
+.comic-skew {
+  transform: skew(-8deg);
+}
+
+.comic-unskew {
+  transform: skew(8deg);
+}
+
+/* Spider-web background patterns */
+.bg-web-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(226, 27, 45, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(18, 58, 115, 0.08) 1px, transparent 1px);
+}
+
+.bg-comic-dots {
+  background-image: radial-gradient(rgba(226, 27, 45, 0.18) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.bg-comic-blue-dots {
+  background-image: radial-gradient(rgba(18, 58, 115, 0.25) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Glowing text and borders */
+.shadow-red-glow {
+  box-shadow: 0 0 25px -5px rgba(226, 27, 45, 0.45);
+}
+
+.shadow-blue-glow {
+  box-shadow: 0 0 25px -5px rgba(18, 58, 115, 0.55);
+}
+
+.border-comic-red {
+  border-color: #E21B2D;
+}
+
+.border-comic-blue {
+  border-color: #123A73;
+}
+
+/* Keyframe animations */
+@keyframes webPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.02);
+  }
+}
+
+.animate-web-pulse {
+  animation: webPulse 6s ease-in-out infinite;
+}
+
+@keyframes skylineGlow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.animate-skyline-glow {
+  animation: skylineGlow 4s ease-in-out infinite;
+}
